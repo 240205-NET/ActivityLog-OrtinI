@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZrnpILKNx7S8qup4EiCO9fl+urdMaCp9wx/L5SrLS5hE2x0ZdB558CNevKozH0jOeuPFzvdOByhLbBs1UMRRNA==",
+  "dgSpecHash": "cAbJvR9/a5PKuXnFvlhefFBKPQJc9Ma23uoyfv6ZgDMvGi670YIf3t66g9Z02aOdQg8EuIP5FweS2RUMG6CPtA==",
   "success": true,
-  "projectFilePath": "D:\\Users\\Ian\\Documents\\Projects\\240205-NET\\ActivityLogProject\\ActivityLog.Test\\ActivityLog.Test.csproj",
+  "projectFilePath": "D:\\Users\\Ian\\Documents\\Projects\\240205-NET\\ActivityLog-OrtinI\\ActivityLog.Test\\ActivityLog.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ian the Superb Guy\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\Ian the Superb Guy\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",

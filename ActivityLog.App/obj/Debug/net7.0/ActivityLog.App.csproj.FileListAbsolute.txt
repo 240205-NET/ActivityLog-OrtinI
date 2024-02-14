@@ -1,0 +1,14 @@
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\bin\Debug\net7.0\ActivityLog.App.exe
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\bin\Debug\net7.0\ActivityLog.App.deps.json
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\bin\Debug\net7.0\ActivityLog.App.runtimeconfig.json
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\bin\Debug\net7.0\ActivityLog.App.dll
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\bin\Debug\net7.0\ActivityLog.App.pdb
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.AssemblyInfoInputs.cache
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.AssemblyInfo.cs
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.csproj.CoreCompileInputs.cache
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.dll
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\refint\ActivityLog.App.dll
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.pdb
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ActivityLog.App.genruntimeconfig.cache
+D:\Users\Ian\Documents\Projects\240205-NET\ActivityLog-OrtinI\ActivityLog.App\obj\Debug\net7.0\ref\ActivityLog.App.dll

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityLog", "ActivityLog\ActivityLog.csproj", "{2775490D-C6B6-40EE-8DC1-CB422DC7A4E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityLog", "ActivityLog.App\ActivityLog.csproj", "{2775490D-C6B6-40EE-8DC1-CB422DC7A4E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActivityLog.Test", "ActivityLog.Test\ActivityLog.Test.csproj", "{4F1D2378-778B-4585-9894-D54E8CC1FA01}"
 EndProject

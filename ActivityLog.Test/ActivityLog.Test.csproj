@@ -22,4 +22,7 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ActivityLog.App\ActivityLog.csproj" />
+  </ItemGroup>
 </Project>
