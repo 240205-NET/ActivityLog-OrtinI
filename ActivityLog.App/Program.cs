@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace ActivityLog.App {
 
@@ -14,12 +15,16 @@ namespace ActivityLog.App {
                 Console.WriteLine(someActivityLog.GetActivitiesInfo());
                 Console.WriteLine(project.ToString());
 
-                //Climbing weekend = new Climbing(start, end, "blue", 11, "Houston");
+                Climbing weekend = new Climbing(start, end, "blue", 11, "Houston");
             }
             catch (Exception e) {
                 Console.WriteLine(e.Message);
             }
             Console.WriteLine("Program ending...");
+        }
+
+        static void WriteFile () {
+
         }
 
     }

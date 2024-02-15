@@ -8,7 +8,7 @@ public class UnitTest1
 {
     private DateTime start = new DateTime(2024, 2, 5, 9, 0, 0);
     private DateTime end = new DateTime(2024, 2, 5, 17, 0, 0);
-    private string testPath = @".\unitTestTextFile.txt";
+    private string testPath = @".\..\unitTestTextFile.txt";
     
     // Unit test 1
     [Fact]
@@ -34,9 +34,17 @@ public class UnitTest1
     public void TestClimbSerialization () {
         Climbing C = new Climbing(start, end, "blue", 11, "Houston", "weekend climb!");
         
-        string[] content = {C.SerializeXML()};
-        File.WriteAllLines(testPath, content);
+        // Serialize to file
+        C.SerializeXML(testPath);
 
         Assert.True(File.Exists(testPath));
+    }
+
+    [Fact]
+    public void TestClimbDeserialization () {
+        Climbing C = new Climbing(start, end, "blue", 11, "Houston", "weekend climb!");
+        C.SerializeXML(testPath);
+
+        Assert.IsType<Climbing>(ActivityLog.App.Climbing.DeserializeXML(testPath));
     }
 }

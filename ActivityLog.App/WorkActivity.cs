@@ -1,13 +1,17 @@
 using System;
+using System.Xml.Serialization;
 
 namespace ActivityLog.App {
 
+    [XmlInclude(typeof(WorkActivity))]
+    [Serializable]
     public class WorkActivity : Activity {
 
         public double wage {get; set;}
         public double materialsCost {get; set;}
         public string client {get;}
         
+        public WorkActivity () {}
 
         public WorkActivity (DateTime startTime, DateTime endTime, double wage, double materialsCost, string client, string description = "") {
             this.startTime = startTime;
@@ -25,6 +29,13 @@ namespace ActivityLog.App {
 
         public double GetProfit () {
             return GetRevenue() - materialsCost;
+        }
+
+        public string SerializeXML () {
+            var stringWriter = new StringWriter();
+            Serializer.Serialize(stringWriter, this);
+            stringWriter.Close();
+            return stringWriter.ToString();
         }
 
         public override string ToString () {
