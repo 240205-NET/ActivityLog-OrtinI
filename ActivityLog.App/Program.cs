@@ -13,6 +13,8 @@ namespace ActivityLog.App {
                 WorkActivity project = new WorkActivity(start, end, 8, 1, "Revature");
                 Console.WriteLine(someActivityLog.GetActivitiesInfo());
                 Console.WriteLine(project.ToString());
+
+                //Climbing weekend = new Climbing(start, end, "blue", 11, "Houston");
             }
             catch (Exception e) {
                 Console.WriteLine(e.Message);
