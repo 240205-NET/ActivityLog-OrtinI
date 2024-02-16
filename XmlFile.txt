@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
-<WorkActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Climbing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <startTime>2024-02-05T09:00:00</startTime>
   <endTime>2024-02-05T17:00:00</endTime>
-  <description>Construction</description>
-  <wage>15</wage>
-  <materialsCost>400</materialsCost>
-  <client>Builder's Guild</client>
-</WorkActivity>
+  <description>Paid time off!</description>
+  <difficultyRecord>PURPLE</difficultyRecord>
+  <routesCompleted>8</routesCompleted>
+  <location>Momentum</location>
+</Climbing>

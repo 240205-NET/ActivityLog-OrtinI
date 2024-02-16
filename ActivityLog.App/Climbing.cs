@@ -9,7 +9,7 @@ namespace ActivityLog.App {
     public class Climbing : Activity {
 
         //private string _routeDifficulties = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE", "BLACK"];
-        public string difficultyRecord {get;}
+        public string difficultyRecord {get; set;}
         public int routesCompleted{get; set;}
         public string location {get; set;}
         //private XmlSerializer Serializer = new XmlSerializer(typeof(Climbing));
@@ -64,7 +64,9 @@ namespace ActivityLog.App {
         }
 
         public override string ToString () {
-            return "climb it all";
+            var result = new System.Text.StringBuilder();
+            result.AppendLine($"CLIMBING:\nStart Time: {this.startTime},\tEnd Time: {this.endTime},\nHighest Difficulty Completed: {this.difficultyRecord}\tNumber of Routes Completed: {this.routesCompleted},\nDescription: {this.description}\n");
+            return result.ToString();
         }
 
     }

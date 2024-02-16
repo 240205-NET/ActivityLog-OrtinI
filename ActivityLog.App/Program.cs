@@ -57,12 +57,14 @@ namespace ActivityLog.App {
                         WriteOption();
                         break;
                     case "4":
-                        someActivityLog.GetActivities()[0].SerializeXML(XmlPath);
+                        //someActivityLog.GetActivities()[0].SerializeXML(XmlPath);
+                        SerializeOption();
                         break;
                     case "5":
                         // Currently hard-coded for the case of WorkActivity
-                        WorkActivity wa = WorkActivity.DeserializeXML(XmlPath);
-                        Console.WriteLine(wa.ToString());
+                        //WorkActivity wa = WorkActivity.DeserializeXML(XmlPath);
+                        //Console.WriteLine("\n" + wa.ToString() + "\n");
+                        DeserializeOption();
                         break;
                     case "0":
                         run = false;
@@ -76,6 +78,39 @@ namespace ActivityLog.App {
 
         static void AddEntryOption () {
             Console.WriteLine("AddEntryOption() still on TODO!!\nPlease try again later!");
+            bool run = true;
+            while (run) {
+                Console.WriteLine("Which type of activity would you like to add");
+                Console.WriteLine("1. Work activity.");
+                Console.WriteLine("2. Climbing session.");
+                Console.WriteLine("0. RETURN to main menu.");
+
+                string? choice = Console.ReadLine();
+                switch (choice) {
+                    case "1":
+                        UserAddWorkActivity();
+                        run = false;
+                        break;
+                    case "2":
+                        UserAddClimbing();
+                        run = false;
+                        break;
+                    case "0":
+                        run = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+            }
+        }
+
+        static void UserAddWorkActivity () {
+            throw new NotImplementedException();
+        }
+
+        static void UserAddClimbing () {
+            throw new NotImplementedException();
         }
 
         static void ReadOption () {
@@ -134,14 +169,74 @@ namespace ActivityLog.App {
             }
         }
 
+        static void SerializeOption () {
+            bool run = true;
+            while (run) {
+                Console.WriteLine("Which type of activity would you like to serialize?");
+                Console.WriteLine("1. Work activity.");
+                Console.WriteLine("2. Climbing session.");
+                Console.WriteLine("0. RETURN to main menu.");
+
+                string? choice = Console.ReadLine();
+                switch (choice) {
+                    case "1":
+                        someActivityLog.GetActivities()[0].SerializeXML(XmlPath);
+                        run = false;
+                        break;
+                    case "2":
+                        someActivityLog.GetActivities()[2].SerializeXML(XmlPath);
+                        run = false;
+                        break;
+                    case "0":
+                        run = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+            }
+        }
+
+        static void DeserializeOption () {
+            bool run = true;
+            while (run) {
+                Console.WriteLine("Which type of activity are you reading?");
+                Console.WriteLine("1. Work activity.");
+                Console.WriteLine("2. Climbing session.");
+                Console.WriteLine("0. RETURN to main menu.");
+
+                string? choice = Console.ReadLine();
+                switch (choice) {
+                    case "1":
+                        WorkActivity wa = WorkActivity.DeserializeXML(XmlPath);
+                        Console.WriteLine("\n" + wa.ToString() + "\n");
+                        run = false;
+                        break;
+                    case "2":
+                        Climbing c = Climbing.DeserializeXML(XmlPath);
+                        Console.WriteLine("\n" + c.ToString() + "\n");
+                        run = false;
+                        break;
+                    case "0":
+                        run = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+            }
+        }
+
         static void ReadFile (string path) {
             Console.WriteLine("Reading from file...");
 
             if (File.Exists(path)) {
                 string[] readText = File.ReadAllLines(path);
+                Console.WriteLine();
                 foreach (string s in readText) {
                     Console.WriteLine(s);
                 }
+                Console.WriteLine();
             }
             else {
                 Console.WriteLine("Could not find the specified file!");

@@ -14,6 +14,7 @@ namespace ActivityLog.App {
             DateTime end = new DateTime(2024, 2, 5, 17, 0, 0);
             _activities.Add(new WorkActivity(start, end, 15, 400, "Builder's Guild", "Construction"));
             _activities.Add(new WorkActivity(start, end, 12.5, 0, "Lilly's Flower Shop", "Webapp contract"));
+            _activities.Add(new Climbing(start, end, "purple ", 8, "Momentum", "Paid time off!"));
         }
 
         public List<Activity> GetActivities () {
