@@ -11,9 +11,11 @@ namespace ActivityLog.App {
         public double materialsCost {get; set;}
         public string client {get;}
         
-        public WorkActivity () {}
+        public WorkActivity () {
+            Serializer = new XmlSerializer(typeof(WorkActivity));
+        }
 
-        public WorkActivity (DateTime startTime, DateTime endTime, double wage, double materialsCost, string client, string description = "") {
+        public WorkActivity (DateTime startTime, DateTime endTime, double wage, double materialsCost, string client, string description = "") : this() {
             this.startTime = startTime;
             this.endTime = endTime;
             this.wage = wage;
@@ -31,11 +33,34 @@ namespace ActivityLog.App {
             return GetRevenue() - materialsCost;
         }
 
-        public string SerializeXML () {
+        public void SerializeXML (string path) {
             var stringWriter = new StringWriter();
             Serializer.Serialize(stringWriter, this);
             stringWriter.Close();
-            return stringWriter.ToString();
+            string[] content = {stringWriter.ToString()};
+            File.WriteAllLines(path, content);
+        }
+
+        public static WorkActivity DeserializeXML (string path) {
+            XmlSerializer serializer = new XmlSerializer(typeof(WorkActivity));
+            WorkActivity WA = new WorkActivity();
+            
+            if (!File.Exists(path)) {
+                Console.WriteLine("File not found!");
+                return null;
+            }
+            else {
+                using StreamReader reader = new StreamReader(path);
+                var record = (WorkActivity)serializer.Deserialize(reader);
+                if (record is null) {
+                    throw new InvalidDataException();
+                    return null;
+                }
+                else  {
+                    WA = record;
+                }
+            }
+            return WA;
         }
 
         public override string ToString () {
