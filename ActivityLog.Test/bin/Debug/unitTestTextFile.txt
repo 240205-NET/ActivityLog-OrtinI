@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<WorkActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <startTime>2024-02-05T09:00:00</startTime>
-  <endTime>2024-02-05T17:00:00</endTime>
-  <description>Catering event.</description>
-  <wage>12</wage>
-  <materialsCost>0</materialsCost>
-  <client>UTD FSA</client>
-</WorkActivity>
