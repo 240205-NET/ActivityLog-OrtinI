@@ -10,8 +10,8 @@ namespace ActivityLog.App {
 
         //private string _routeDifficulties = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "PURPLE", "BLACK"];
         public string difficultyRecord {get;}
-        public int routesCompleted{get;}
-        public string location {get;}
+        public int routesCompleted{get; set;}
+        public string location {get; set;}
         //private XmlSerializer Serializer = new XmlSerializer(typeof(Climbing));
 
         public Climbing () {
@@ -33,7 +33,7 @@ namespace ActivityLog.App {
             this.description = description;
         }
 
-        public void SerializeXML (string path) {
+        public override void SerializeXML (string path) {
             var stringWriter = new StringWriter();
             Serializer.Serialize(stringWriter, this);
             stringWriter.Close();
@@ -42,7 +42,7 @@ namespace ActivityLog.App {
         }
 
         public static Climbing DeserializeXML (string path) {
-            XmlSerializer serializer = new XmlSerializer(typeof(Climbing));
+            XmlSerializer deSerializer = new XmlSerializer(typeof(Climbing));
             Climbing C = new Climbing();
             
             if (!File.Exists(path)) {
@@ -51,7 +51,7 @@ namespace ActivityLog.App {
             }
             else {
                 using StreamReader reader = new StreamReader(path);
-                var record = (Climbing)serializer.Deserialize(reader);
+                var record = (Climbing)deSerializer.Deserialize(reader);
                 if (record is null) {
                     throw new InvalidDataException();
                     return null;

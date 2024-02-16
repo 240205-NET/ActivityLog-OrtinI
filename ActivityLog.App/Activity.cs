@@ -1,3 +1,4 @@
+using System.IO;
 using System.Xml.Serialization;
 
 namespace ActivityLog.App {
@@ -20,6 +21,13 @@ namespace ActivityLog.App {
             return stringWriter.ToString();
         }
         */
+        public virtual void SerializeXML (string path) {
+            var stringWriter = new StringWriter();
+            Serializer.Serialize(stringWriter, this);
+            stringWriter.Close();
+            string[] content = {stringWriter.ToString()};
+            File.WriteAllLines(path, content);
+        }
 
         public abstract override string ToString ();
 

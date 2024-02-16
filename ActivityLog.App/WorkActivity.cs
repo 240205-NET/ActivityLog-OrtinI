@@ -9,7 +9,7 @@ namespace ActivityLog.App {
 
         public double wage {get; set;}
         public double materialsCost {get; set;}
-        public string client {get;}
+        public string client {get; set;}
         
         public WorkActivity () {
             Serializer = new XmlSerializer(typeof(WorkActivity));
@@ -33,7 +33,7 @@ namespace ActivityLog.App {
             return GetRevenue() - materialsCost;
         }
 
-        public void SerializeXML (string path) {
+        public override void SerializeXML (string path) {
             var stringWriter = new StringWriter();
             Serializer.Serialize(stringWriter, this);
             stringWriter.Close();
@@ -42,7 +42,7 @@ namespace ActivityLog.App {
         }
 
         public static WorkActivity DeserializeXML (string path) {
-            XmlSerializer serializer = new XmlSerializer(typeof(WorkActivity));
+            XmlSerializer deSerializer = new XmlSerializer(typeof(WorkActivity));
             WorkActivity WA = new WorkActivity();
             
             if (!File.Exists(path)) {
@@ -51,7 +51,7 @@ namespace ActivityLog.App {
             }
             else {
                 using StreamReader reader = new StreamReader(path);
-                var record = (WorkActivity)serializer.Deserialize(reader);
+                var record = (WorkActivity)deSerializer.Deserialize(reader);
                 if (record is null) {
                     throw new InvalidDataException();
                     return null;

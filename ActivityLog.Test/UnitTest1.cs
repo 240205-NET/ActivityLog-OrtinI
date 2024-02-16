@@ -33,10 +33,13 @@ public class UnitTest1
     // Unit test 3
     [Fact]
     public void TestWorkActivityDeserialization () {
-        WorkActivity wa = new WorkActivity(start, end, 12, 0, "UTD FSA", "Catering event.");
-        wa.SerializeXML(testPath);
+        WorkActivity expected = new WorkActivity(start, end, 12, 0, "UTD FSA", "Catering event.");
+        expected.SerializeXML(testPath);
 
-        Assert.IsType<WorkActivity>(ActivityLog.App.WorkActivity.DeserializeXML(testPath));
+        var actual = ActivityLog.App.WorkActivity.DeserializeXML(testPath);
+
+        Assert.IsType<WorkActivity>(actual);
+        Assert.Equal(expected.client, actual.client);
     }
 
     [Theory]
@@ -95,9 +98,12 @@ public class UnitTest1
     // Unit test 10
     [Fact]
     public void TestClimbingDeserialization () {
-        Climbing c = new Climbing(start, end, "blue", 11, "Houston", "weekend climb!");
-        c.SerializeXML(testPath);
+        Climbing expected = new Climbing(start, end, "blue", 11, "Houston", "weekend climb!");
+        expected.SerializeXML(testPath);
 
-        Assert.IsType<Climbing>(ActivityLog.App.Climbing.DeserializeXML(testPath));
+        var actual = ActivityLog.App.Climbing.DeserializeXML(testPath);
+
+        Assert.IsType<Climbing>(actual);
+        Assert.Equal(expected.location, actual.location);
     }
 }

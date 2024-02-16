@@ -41,6 +41,8 @@ namespace ActivityLog.App {
                 Console.WriteLine("1. Add entry to your activity log.");
                 Console.WriteLine("2. Read from file.");
                 Console.WriteLine("3. Write to file.");
+                Console.WriteLine("4. Create XML record.");
+                Console.WriteLine("5. Read from XML record.");
                 Console.WriteLine("0. Exit program.");
 
                 string? choice = Console.ReadLine();
@@ -53,6 +55,14 @@ namespace ActivityLog.App {
                         break;
                     case "3":
                         WriteOption();
+                        break;
+                    case "4":
+                        someActivityLog.GetActivities()[0].SerializeXML(XmlPath);
+                        break;
+                    case "5":
+                        // Currently hard-coded for the case of WorkActivity
+                        WorkActivity wa = WorkActivity.DeserializeXML(XmlPath);
+                        Console.WriteLine(wa.ToString());
                         break;
                     case "0":
                         run = false;
